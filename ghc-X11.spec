@@ -8,9 +8,17 @@ Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	80638b99238f72d4cc351b4fbd7274fc
 URL:		http://hackage.haskell.org/package/X11/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-data-default
 BuildRequires:	rpmbuild(macros) >= 1.608
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXinerama-devel
+BuildRequires:	xorg-lib-libXrandr-devel
+BuildRequires:	xorg-lib-libXScrnSaver-devel
+BuildRequires:	xorg-proto-xproto-devel
 %requires_eq	ghc
 Requires:	ghc-data-default
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,6 +44,9 @@ Dokumentacja w formacie HTML dla %{pkgname}.
 %setup -q -n %{pkgname}-%{version}
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
 runhaskell Setup.hs configure -v2 \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
