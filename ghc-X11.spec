@@ -1,12 +1,12 @@
 %define		pkgname	X11
 Summary:	A Haskell binding to the X11 graphics library
 Name:		ghc-%{pkgname}
-Version:	1.6.1.1
-Release:	2
+Version:	1.9.1
+Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	80638b99238f72d4cc351b4fbd7274fc
+# Source0-md5:	71af9399de42c9e41b52020499947833
 URL:		http://hackage.haskell.org/package/X11/
 BuildRequires:	autoconf
 BuildRequires:	automake
